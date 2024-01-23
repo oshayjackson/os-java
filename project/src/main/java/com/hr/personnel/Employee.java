@@ -1,6 +1,8 @@
 package com.hr.personnel;
 import java.time.LocalDate;
-public class Employee {
+
+public abstract class Employee {
+
     private String name;
     private LocalDate hireDate;
 
@@ -9,13 +11,31 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    // method 1
-    public String getEmployeeInfo() {
-        return "name = " + name + ", hireDate =" + hireDate;
+    public abstract double computeMonthlyTaxToPay();
+
+    public abstract String getEmployeeInfo();
+
+    public abstract double computeMonthlyCompensation();
+
+    public String work() {
+        return name + " worked!";
     }
 
-    // method 2
-    public String work() {
-        return null;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(LocalDate hireDate) {
+        this.hireDate = hireDate;
     }
 }
+
+
